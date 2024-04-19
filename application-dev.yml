@@ -6,7 +6,7 @@ encrypt:
 
 eureka:
   client:
-    fetch-registry: true
-    register-with-eureka: true
+    fetchRegistry: true
+    registerWithEureka: true
     serviceUrl:
-      defaultZone: ${EUREKA.SERVER.HOSTNAME:http://eureka-server:8761/eureka}
+      defaultZone: ${EUREKA.SERVER.HOSTNAME:http://localhost:8761/eureka}
