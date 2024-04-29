@@ -1,0 +1,31 @@
+server:
+  port: ${CUSTOM.SERVER.PORT:9010}
+
+spring:
+  data:
+    mongodb:
+      uri: mongodb://mtc:mtc@localhost:27017/mtc?authSource=admin
+
+#Actuator configuration
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+        base-path: /actuator
+  tracing:
+    sampling:
+      probability: 1.0
+
+# Logging Configuration
+logging:
+  level:
+    reactor:
+      netty: DEBUG
+    org:
+      springframework:
+        cloud:
+          gateway: DEBUG, INFO, ERROR, TRACE, ALL
+        web: DEBUG
+  pattern:
+    level: '%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]'
