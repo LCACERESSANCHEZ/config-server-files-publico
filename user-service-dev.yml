@@ -11,7 +11,7 @@ eureka:
 spring:
   data:
     mongodb:
-      uri: mongodb://mtc:mtc@localhost:27017/mtc?authSource=admin
+      uri: ${MONGODB.URL.CONNECTION:mongodb://mtc:mtc@localhost:27017/mtc?authSource=admin}      
 
 #Actuator configuration
 management:
